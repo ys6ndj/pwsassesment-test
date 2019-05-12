@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>assesment</title>
+  <link href="{% static 'css/assesment_style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <h1>PwsAssesment（仮）</h1>
+</header>
+
+{% block body %}
+
+<h1>aaaassssssss</h1>
+totalassesment is {{total}}
+{% for sp in getable_sp_lst %}
+  <p>査定値{{sp.2}}{{sp.0.name}} 筋力{{sp.0.physical}}敏捷{{sp.0.speed}}技術{{sp.0.tecnic}}精神{{sp.0.mental}}</p>
+  <br>
+{% endfor %}
+{{getable_sp_lst}}
+経験点は{{points}}
+ポジションは{{position}}
+合計は{{sum}}
+
+<!--{{no}}
+{% for i,j in sp_dict.items %}
+  {{i}}:{{j}}
+{% endfor %}
+{% for i in points %}
+  {{i}}
+{% endfor %}
+-->
+<p>not got</p>
+{% for i,j in no.items %}
+  {{i}}:{{j}}
+{% endfor %}
+<p>ポジション</p>
+<form class="posisions" action="" method="get">
+    <div class="all-posisions">
+       <div class="FW">
+        <!-- LWG -->
+        <input type="radio" name="posision" value="wg" id="LWG">
+        <label id="LWG" class="posision" for="LWG">LWG</label>
+        <!-- CF -->
+        <input type="radio" name="posision" value="cf" id="CF">
+        <label id="CF" class="posision" for="CF">CF</label>
+        <!-- RWG -->
+        <input type="radio" name="posision" value="wg" id="RWG">
+        <label id="RWG" class="posision" for="RWG">RWG</label>
+        <!-- ST -->
+        <input type="radio" name="posision" value="st" id="ST">
+        <label id="ST" class="posision" for="ST">ST</label>
+       </div>
+       <div class="MF">
+       <!-- OMF -->
+       <input type="radio" name="posision" value="omf" id="OMF">
+       <label id="OMF" class="posision" for="OMF">OMF</label>
+       <!-- LMF -->
+       <input type="radio" name="posision" value="smf" id="LMF">
+       <label id="LMF" class="posision" for="LMF">LMF</label>
+       <!-- CMF -->
+       <input type="radio" name="posision" value="cmf" id="CMF">
+       <label id="CMF" class="posision" for="CMF">CMF</label>
+       <!-- RMF -->
+       <input type="radio" name="posision" value="smf" id="RMF">
+       <label id="RMF" class="posision" for="RMF">RMF</label>
+       <!-- DMF -->
+       <input type="radio" name="posision" value="dmf" id="DMF">
+       <label id="DMF" class="posision" for="DMF">DMF</label>
+       </div>
+       <div class="DF">
+       <!-- LSB -->
+       <input type="radio" name="posision" value="sb" id="LSB">
+       <label id="LSB" class="posision" for="LSB">LSB</label>
+       <!-- CB -->
+       <input type="radio" name="posision" value="cb" id="CB">
+       <label id="CB" class="posision" for="CB">CB</label>
+       <!-- RSB -->
+       <input type="radio" name="posision" value="sb" id="RSB">
+       <label id="RSB" class="posision" for="RSB">RSB</label>
+       </div>
+       <!-- GK -->
+       <div class="GK">
+       <input type="radio" name="posision" value="gk" id="GK">
+       <label id="GK" class="posision" for="GK">GK</label>
+       </div>
+    </div>
+
+
+    <h2>パワサカ君の状態</h2>
+    <div class="points">
+
+        <div class="status physical">
+            <input type="number" min="0" max="999" placeholder="" class="detail" name="physical">
+            <label>筋力</label>
+            <span class=""></span>
+        </div>
+        <div class="status speed">
+            <input type="number" min="0" max="999"  placeholder="" class="detail" name="speed">
+            <label>敏捷</label>
+            <span class=""></span>
+        </div>
+        <div class="status tecnic">
+            <input type="number" min="0" max="999"  placeholder="" class="detail" name="tecnic">
+            <label>技術</label>
+            <span class=""></span>
+        </div>
+        <div class="status mental">
+            <input type="number" min="0" max="999"  placeholder="" class="detail" name="mental">
+            <label>精神</label>
+            <span class=""></span>
+        </div>
+
+</div>
+    <p>基本ステータス</p>
+
+    <div class="statuses">
+
+        <div class="status ofe">
+            <input type="number" min="1" max="101" placeholder="" class="detail" name="ofe">
+            <label>OFE</label>
+            <span class="focus_line"></span>
+        </div>
+        <div class="status def">
+            <input type="number" min="1" max="101" placeholder="" class="detail" name="def">
+            <label>DEF</label>
+            <span class="focus_line"></span>
+        </div>
+        <div class="status pow">
+            <input type="number" min="1" max="101" placeholder="" class="detail" name="pow">
+            <label>POW</label>
+            <span class="focus_line"></span>
+        </div>
+        <div class="status spd">
+            <input type="number" min="1" max="101" placeholder="" class="detail" name="spd">
+            <label>SPD</label>
+            <span class="focus_line"></span>
+        </div>
+        <div class="status tec">
+            <input type="number" min="1" max="101" placeholder="" class="detail" name="tec">
+            <label>TEC</label>
+            <span class="focus_line"></span>
+        </div>
+        <div class="status sta">
+            <input type="number" min="1" max="101" placeholder="" class="detail" name="sta">
+            <label>STA</label>
+            <span class="focus_line"></span>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+<p>取得済みの特殊能力</p>
+<!--
+<div class="specialities">
+{% for k, v in specialities.specialities_dict.items %}
+  <div class="speciality">
+  <label class="s-name">{{v}}</label>
+  <div class="kotsu-lv">
+  <input type="radio" name="{{k}}" value="0" id="{{k}}_0" checked>
+  <label for="{{k}}_0" class="select">0</label>
+  <input type="radio" name="{{k}}" value="1" id="{{k}}_1">
+  <label for="{{k}}_1" class="select">1</label>
+  <input type="radio" name="{{k}}" value="2" id="{{k}}_2">
+  <label for="{{k}}_2" class="select">2</label>
+  <input type="radio" name="{{k}}" value="3" id="{{k}}_3">
+  <label for="{{k}}_3" class="select">3</label>
+  <input type="radio" name="{{k}}" value="4" id="{{k}}_4">
+  <label for="{{k}}_4" class="select">4</label>
+  <input type="radio" name="{{k}}" value="5" id="{{k}}_5">
+  <label for="{{k}}_5" class="select">5</label>
+  <input type="radio" name="{{k}}" value="6" id="{{k}}_6">
+  <label for="{{k}}_6" class="select">済</label>
+</div>
+  </div>
+{% endfor %}
+
+
+</div>-->
+<div class="specialities">
+{% for sp in t %}
+  <div class="speciality">
+  <label class="s-name">{{sp.name}}</label>
+  <div class="kotsu-lv">
+  <input type="radio" name="{{sp.tag}}" value="0" id="{{sp.tag}}_0" checked>
+  <label for="{{sp.tag}}_0" class="select">0</label>
+  <input type="radio" name="{{sp.tag}}" value="1" id="{{sp.tag}}_1">
+  <label for="{{sp.tag}}_1" class="select">1</label>
+  <input type="radio" name="{{sp.tag}}" value="2" id="{{sp.tag}}_2">
+  <label for="{{sp.tag}}_2" class="select">2</label>
+  <input type="radio" name="{{sp.tag}}" value="3" id="{{sp.tag}}_3">
+  <label for="{{sp.tag}}_3" class="select">3</label>
+  <input type="radio" name="{{sp.tag}}" value="4" id="{{sp.tag}}_4">
+  <label for="{{sp.tag}}_4" class="select">4</label>
+  <input type="radio" name="{{sp.tag}}" value="5" id="{{sp.tag}}_5">
+  <label for="{{sp.tag}}_5" class="select">5</label>
+  <input type="radio" name="{{sp.tag}}" value="6" id="{{sp.tag}}_6">
+  <label for="{{sp.tag}}_6" class="select">済</label>
+</div>
+  </div>
+{% endfor %}
+
+
+</div>
+
+    <input type="submit" value="submit">
+    </form>
+
+{% endblock %}
+
+
+</body>
+</html>

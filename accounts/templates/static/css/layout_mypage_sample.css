@@ -1,0 +1,134 @@
+
+header h1 {
+    font-size: 120%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top; 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #313131;
+    border-radius: 5px;
+    font-weight: 400;
+    float: left;
+}
+
+header {
+    display: block;
+    width: 60%;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+.user-line {
+    position: relative;
+    display: grid;
+    grid-template-rows: 80px 80px 80px;
+    grid-template-columns: 80px 480px 440px;
+}
+
+.user-name {
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+    font-size: 30px;
+    border-bottom: 1px solid #ff0000;
+    margin: 80px 80px 10px 10px;
+    line-height: 80px;
+}
+
+.registration {
+    
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    justify-content: center;
+    border: 1px solid #ff0000;
+    text-align: center;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 2px 20px 2px 20px;
+    list-style: none;
+}
+.p-registration {
+    position: absolute;
+    bottom: 0;
+    grid-row: 2/ 3;
+    grid-column: 3 / 5;
+    border-bottom: 1px solid #ff0000;
+    
+}
+.ivent-character-registration {
+    
+    text-align: center;
+    width: calc(100%/2);
+    border: 5px solid #0000ff;
+    border-radius: 50px;
+    padding: 0px 5px 0px 5px;
+    line-height: 0px;
+    margin:0px 5px 0px 5px;
+    
+}
+
+.mr_pwsc-registration {
+    
+    text-align: center;
+    width: calc(100%/2);
+    border: 5px solid #0000ff;
+    border-radius: 50px;
+    padding: 0px 5px 0px 5px;    
+    line-height: 0px;
+    margin:0px 5px 0px 5px;
+}
+.ivent-character-window {
+    margin: 5%;
+    position: relative;
+    margin: 100px;
+    display: grid;
+    grid-template-rows: 50px 200px 50px 200px;
+    grid-template-columns: 200px 600px 200px;
+}
+.registered-ivent-charater {
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    list-style: none;
+    border: 2px solid #ff0000;
+    overflow: auto;
+}
+.reg-p {
+    position: absolute;
+    bottom: -20px;
+    grid-row: 1/ 2;
+    grid-column: 2 / 3;
+}
+.rec-reg-p {
+    position: absolute;
+    bottom: -20px;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+}
+.recently-registered-ivent-character {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+    list-style: none;
+    border: 2px solid #ff0000;
+    overflow: auto;
+}
+.registered-ivent-charater li {
+    font-size: 30px;
+}
+.recently-registered-ivent-character li{
+    font-size: 30px;
+}
